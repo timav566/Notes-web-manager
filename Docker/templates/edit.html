@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<body>
+
+<form action = "http://localhost:5000/" method = "POST">
+    <p>
+        <b>
+            This is file: <input type = "text" name = "file_name" value = {{name}} readonly />
+        </b>
+    </p>
+    <p><textarea rows="10" cols="45" name="edit">{{result}}</textarea></p>
+    <p><input type = "submit" value = "submit changes" /></p>
+</form>
+<form action = "http://localhost:5000/" method = "POST">
+    <p><input type = "submit" value = "return to menu" /></p>
+</form>
+</body>
+</html>

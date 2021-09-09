@@ -1,0 +1,40 @@
+<html>
+   <body>
+   <p>Table of available files:</p>
+   <table border = 1>
+         <tr>
+            <td> File name </td>
+            <td> Created </td>
+            <td> Last modified </td>
+         </tr>
+      {% for i in range(sz) %}
+         <tr>
+            <th> {{ result_1[i] }} </th>
+            <td> {{ result_2[i] }} </td>
+            <td> {{ result_3[i] }} </td>
+         </tr>
+      {% endfor %}
+   </table>
+   <p>Enter file you want to process:</p>
+   <form action = "http://localhost:5000/read" method = "POST">
+      <p><input type = "text" name = "nm" /></p>
+      <p><input type = "submit" value = "read" /></p>
+   </form>
+   <form action = "http://localhost:5000/edit" method = "POST">
+      <p><input type = "text" name = "nm" /></p>
+      <p><input type = "submit" value = "edit" /></p>
+   </form>
+   <form action = "http://localhost:5000/add" method = "POST">
+      <p><input type = "text" name = "nm" /></p>
+      <p><input type = "submit" value = "add" /></p>
+   </form>
+   <form action = "http://localhost:5000/" method = "POST">
+      <p><input type = "text" name = "delete" /></p>
+      <p><input type = "submit" value = "delete" /></p>
+   </form>
+   <form action = "http://localhost:5000/history" method = "POST">
+      <p><input type = "text" name = "history" /></p>
+      <p><input type = "submit" value = "modification history" /></p>
+   </form>
+   </body>
+</html>

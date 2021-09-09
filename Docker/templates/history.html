@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<body>
+<p>
+    <b>
+        Modification history for {{ name }}:
+    </b>
+</p>
+<p>
+<table border=1>
+    {% for i in range(sz) %}
+    <tr>
+        <td> {{ i }}</td>
+        <td> {{ result[i] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<form action="http://localhost:5000/" method="POST">
+    <p><input type="submit" value="return to menu"/></p>
+</form>
+</p>
+</body>
+</html>
