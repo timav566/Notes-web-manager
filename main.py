@@ -1,6 +1,8 @@
-import os, re
-from flask import Flask, render_template, request
+import os
+import re
 from datetime import datetime
+
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 # Название файла в котором хранятся данные, через название самого файла
@@ -155,6 +157,19 @@ def add():
         for key, value in request.form.items():
             chosen_note = value
         return render_template("add.html", name=chosen_note)
+    return 0
+
+
+@app.route('/history', methods=['POST', 'GET'])
+def history():
+    if request.method == 'POST':
+        chosen_note, data = "", ""
+        for key, value in request.form.items():
+            chosen_note = value
+        with open(get_modification_history_dir() + chosen_note) as f:
+            data = f.readlines()
+        print(data)
+        return render_template("history.html", name=chosen_note, sz=len(data), result=data)
     return 0
 
 

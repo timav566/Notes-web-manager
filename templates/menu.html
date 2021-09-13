@@ -6,18 +6,16 @@
             <td> File name </td>
             <td> Created </td>
             <td> Last modified </td>
-            <td> Modification history </td>
          </tr>
       {% for i in range(sz) %}
          <tr>
             <th> {{ result_1[i] }} </th>
             <td> {{ result_2[i] }} </td>
             <td> {{ result_3[i] }} </td>
-            <td> <a href="TODO">TODO</a> </td>
          </tr>
       {% endfor %}
    </table>
-   <p>Enter file you want to open:</p>
+   <p>Enter file you want to process:</p>
    <form action = "http://localhost:5000/read" method = "POST">
       <p><input type = "text" name = "nm" /></p>
       <p><input type = "submit" value = "read" /></p>
@@ -33,6 +31,10 @@
    <form action = "http://localhost:5000/" method = "POST">
       <p><input type = "text" name = "delete" /></p>
       <p><input type = "submit" value = "delete" /></p>
+   </form>
+   <form action = "http://localhost:5000/history" method = "POST">
+      <p><input type = "text" name = "history" /></p>
+      <p><input type = "submit" value = "modification history" /></p>
    </form>
    </body>
 </html>
